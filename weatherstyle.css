@@ -89,6 +89,10 @@ body {
       margin: 30px auto;
   }
 
+  .overview {
+      margin-bottom: 20px;
+  }
+
   form {
       text-align: left;
   }
