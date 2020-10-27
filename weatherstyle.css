@@ -9,7 +9,7 @@ body {
   h2 {
     text-align: left;
     color: #e50914;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 30px;
     padding: 0;
     margin: 0;
@@ -29,7 +29,9 @@ body {
     margin: 0;
     padding: 10;
     font-weight: 40px;
+    max-width: 600px;
   }
+
   li {
     list-style: none;
     font-size: 16px;
@@ -57,4 +59,9 @@ body {
   .Github {
       text-align: center;
       font-size: 12px;
+      line-height: 5px;
+  }
+
+  .container {
+
   }
