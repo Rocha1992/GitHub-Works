@@ -38,7 +38,6 @@ body {
     list-style: none;
     font-size: 16px;
     text-align: right;
-    line-height: 5px;
     height: 25px;
   }
   
@@ -86,4 +85,5 @@ body {
       margin: 30px;
       line-height: 30px;
       text-align: center;
+      height: 20px;
   }
