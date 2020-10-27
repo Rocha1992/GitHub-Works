@@ -40,6 +40,8 @@ body {
     text-align: right;
     height: 25px;
     line-height: 10px;
+    margin: 0;
+    padding: 0 auto;
   }
   
   .col-6 i {
@@ -82,4 +84,6 @@ body {
       line-height: 30px;
       border: 1px solid #FFFFFF;
   }
+
+
  
