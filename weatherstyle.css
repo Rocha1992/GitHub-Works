@@ -20,6 +20,11 @@ body {
     color: black;
     line-height: 10px;
   }
+
+  .col-2 strong {
+      margin: 10px;
+      padding: 0px;
+  }
   
   p {
     font-size: 20px;
