@@ -39,6 +39,7 @@ body {
     font-size: 16px;
     text-align: right;
     height: 25px;
+    line-height: 5px;
   }
   
   .col-6 i {
