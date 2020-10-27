@@ -90,7 +90,8 @@ body {
   }
 
   form {
-      text-align: center;
+      text-align: left;
+      position: fixed;
   }
 
 
