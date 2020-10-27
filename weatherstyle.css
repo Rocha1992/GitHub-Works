@@ -79,4 +79,7 @@ body {
       padding: 0;
       line-height: 5px;
   }
-
+ 
+  strong {
+      padding: 30px;
+  }
