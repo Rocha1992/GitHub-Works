@@ -78,11 +78,10 @@ body {
   }
 
   .weather-app {
-      max-width: 600px;
-      margin: 0px;
-      padding: 0;
+      padding: 20px;
       line-height: 30px;
       border: 1px solid #FFFFFF;
+      border-radius: 5px;
   }
 
 
