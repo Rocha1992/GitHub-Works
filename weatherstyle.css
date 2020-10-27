@@ -76,7 +76,7 @@ body {
 
   .weather-app {
       max-width: 600px;
-      margin: 0 auto;
+      margin: 30px;
       padding: 0;
       line-height: 30px;
   }
