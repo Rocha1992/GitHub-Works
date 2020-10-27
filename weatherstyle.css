@@ -69,6 +69,7 @@ body {
       font-size: 60px;
       color: yellow;
       margin: 5px;
+      padding: 30px;
   }
 
   .weather-app {
@@ -80,4 +81,5 @@ body {
 
   form {
       text-align: center;
+      margin: 
   }
