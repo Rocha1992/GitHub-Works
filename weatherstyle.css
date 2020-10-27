@@ -1,5 +1,6 @@
 body {
     background: #f0f2f5;
+    max-width: 600px;
   }
   
   h1 {
@@ -65,4 +66,5 @@ body {
   .col-4 i {
       font-size: 60px;
       color: yellow;
+      margin: 
   }
