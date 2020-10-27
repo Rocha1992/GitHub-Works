@@ -83,4 +83,6 @@ body {
  
  strong {
      line-height: 30px;
+     margin: 40px;
+     padding: 60px;
  }
