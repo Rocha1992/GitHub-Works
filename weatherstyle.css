@@ -82,6 +82,7 @@ body {
   }
  
   strong {
-      padding: 0;
+      padding: 20px;
       margin: 30px;
+      line-height: 30px;
   }
