@@ -78,7 +78,7 @@ let weather = {
     let minutes = date.getMinutes();
     let seconds = date.getMilliseconds();
   
-    return `${day}, ${month}, ${year}. ${hours}:${minutes}:${seconds}`;
+    return `${day}, ${month}, ${date}, ${year}. ${hours}:${minutes}:${seconds}`;
   }
   
   console.log(formDate);
