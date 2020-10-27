@@ -19,8 +19,6 @@ body {
     font-size: 60px;
     color: black;
     line-height: 10px;
-    margin: 0 auto;
-    padding: 0;
   }
   
   p {
@@ -82,7 +80,3 @@ body {
       line-height: 5px;
   }
 
-  form {
-      text-align: center;
-      margin: 30px;
-  }
