@@ -70,8 +70,6 @@ body {
   .col-4 i {
       font-size: 60px;
       color: yellow;
-      margin: 5px;
-      padding: 30px;
   }
 
   .weather-app {
@@ -81,8 +79,3 @@ body {
       line-height: 30px;
   }
  
- strong {
-     line-height: 30px;
-     margin: 40px;
-     padding: 60px;
- }
