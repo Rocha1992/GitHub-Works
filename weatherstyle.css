@@ -81,4 +81,7 @@ body {
       line-height: 30px;
   }
  
- 
+ strong {
+     margin: 0;
+     padding: 0;
+ }
