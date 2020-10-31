@@ -72,8 +72,8 @@ function displayWeather(response) {
   let description = document.querySelector("#temperature-description");
   let cityElement = document.querySelector("#city");
   let precipitationElement = document.querySelector("#precipitation");
-  let humidityElement = document.querySelector("humidity");
-  let windElement = document.querySelector("wind");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
   precipitationElement.innerHTML= Math.round(response.data.main.precipitation);
   humidityElement.innerHTML =response.data.main.humidity;
   windElement.innerHTML= Math.round(response.data.wind.speed);
