@@ -71,6 +71,12 @@ function displayWeather(response) {
   let tempElement = document.querySelector("#temperature");
   let description = document.querySelector("#temperature-description");
   let cityElement = document.querySelector("#city");
+  let precipitationElement = document.querySelector("#precipitation");
+  let humidityElement = document.querySelector("humidity");
+  let windElement = document.querySelector("wind");
+  precipitationElement.innerHTML= Math.round(response.data.main.precipitation);
+  humidityElement.innerHTML =response.data.main.humidity;
+  windElement.innerHTML= Math.round(response.data.wind.speed);
   cityElement.innerHTML = `${response.data.name},`;
   tempElement.innerHTML = `${temperature}°C`;
   description.innerHTML = response.data.weather[0].description;
