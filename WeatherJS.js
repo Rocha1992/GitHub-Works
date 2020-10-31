@@ -1,5 +1,8 @@
+let currentDate = new Date();
+let dateElement=document.querySelector("#date");
+dateElement.innerHTML =formDate(currentDate);
+
 function formDate(date) {
-  let currentDate = new Date();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];
   let hours = date.getHours();
@@ -66,8 +69,6 @@ function displayWeather(response) {
   let cityElement = document.querySelector("#city");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let dateElement=document.querySelector("#date");
-  dateElement.innerHTML =formDate(currentDate);
   humidityElement.innerHTML =response.data.main.humidity;
   windElement.innerHTML= Math.round(response.data.wind.speed);
   cityElement.innerHTML = `${response.data.name}`;
