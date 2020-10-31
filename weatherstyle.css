@@ -112,5 +112,8 @@ body {
       margin-right: 20px;
   }
 
+  li:first letter {
+    text-transform: capitalize;
+  }
 
  
