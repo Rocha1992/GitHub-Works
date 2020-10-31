@@ -1,11 +1,11 @@
-let currentDate = new Date();
-let dateElement=document.querySelector("#date");
-dateElement.innerHTML =formDate(currentDate);
+let currentTime = new Date();
+let dateElement = document.querySelector("#date");
+dateElement.innerHTML = formDate(currentTime);
 
 function formDate(date) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];
-  let hours = date.getHours();
+
   let months = [
     "Jan",
     "Feb",
@@ -21,9 +21,13 @@ function formDate(date) {
     "Dec"
   ];
   let month = months[date.getMonth()];
-  let year = date.getFullYear();
 
-  return `${day}, ${month} ${date}, ${year}. ${hours}:${minutes}`;
+  let year = date.getFullYear();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getMilliseconds();
+
+  return `${day}, ${month} ${date}, ${year}. ${hours}:${minutes}:${seconds}`;
 }
 
 function handleSubmit(event) {
