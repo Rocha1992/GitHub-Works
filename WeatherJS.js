@@ -26,8 +26,6 @@ function formDate(date) {
   ];
   let month = months[date.getMonth()];
   let year = date.getFullYear();
-  let dateElement=document.querySelector("#date");
-  dateElement.innerHTML =formDate(response.data.dt +1000);
   
   return `${day}, ${month} ${date}, ${year}. ${hours}:${minutes}`;
 }
@@ -75,6 +73,8 @@ function displayWeather(response) {
   let cityElement = document.querySelector("#city");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let dateElement=document.querySelector("#date");
+  dateElement.innerHTML =formDate(response.data.dt +1000);
   humidityElement.innerHTML =response.data.main.humidity;
   windElement.innerHTML= Math.round(response.data.wind.speed);
   cityElement.innerHTML = `${response.data.name}`;
