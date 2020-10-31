@@ -1,3 +1,54 @@
+let weather = {
+  paris: {
+    temp: 19.7,
+    humidity: 80
+  },
+  tokyo: {
+    temp: 17.3,
+    humidity: 50
+  },
+  lisbon: {
+    temp: 30.2,
+    humidity: 20
+  },
+  "san francisco": {
+    temp: 20.9,
+    humidity: 100
+  },
+  moscow: {
+    temp: -5,
+    humidity: 20
+  }
+};
+
+let temperature;
+let celsiusTemperature;
+let fahrenheitTemperature;
+let humidity;
+
+let city = prompt("Enter a city");
+if (weather[city] !== undefined) {
+  temperature = weather[city].temp;
+  celsiusTemperature = Math.round(temperature);
+  fahrenheitTemperature = Math.round(temperature);
+  humidity = weather[city].humidity;
+  alert(
+    `It is currently ${temperature}*C,  ${temperature}*F in ${city}, with a humidity of ${humidity}!`
+  );
+} else {
+  alert(
+    "Sorry, we don't have the city you're looking for. Please try searching on Google"
+  );
+}
+console.log(weather);
+console.log(temperature);
+console.log(humidity);
+console.log(city);
+console.log(weather[city]);
+console.log(alert);
+console.log(celsiusTemperature);
+console.log(fahrenheitTemperature);
+
 let currentTime = new Date();
 let dateElement = document.querySelector("#date");
 dateElement.innerHTML = formDate(currentTime);
