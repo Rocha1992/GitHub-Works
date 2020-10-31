@@ -1,5 +1,5 @@
 function formDate(date) {
-  let date = new Date(date);
+  let date = new Date();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];
   let hours = date.getHours();
