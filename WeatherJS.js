@@ -2,7 +2,7 @@ let currentTime = new Date();
 let dateElement = document.querySelector("#date");
 dateElement.innerHTML = formDate(currentTime);
 
-function formDate(timestamp) {
+function formDate(date) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];
 
