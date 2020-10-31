@@ -3,13 +3,6 @@ function formDate(date) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];
   let hours = date.getHours();
-  if (hours < 10) {
-    hours =`0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes=`0${minutes}`;
-  }
   let months = [
     "Jan",
     "Feb",
@@ -26,7 +19,7 @@ function formDate(date) {
   ];
   let month = months[date.getMonth()];
   let year = date.getFullYear();
-  
+
   return `${day}, ${month} ${date}, ${year}. ${hours}:${minutes}`;
 }
 
