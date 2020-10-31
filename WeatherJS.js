@@ -78,7 +78,7 @@ function displayWeather(response) {
   humidityElement.innerHTML =response.data.main.humidity;
   windElement.innerHTML= Math.round(response.data.wind.speed);
   cityElement.innerHTML = `${response.data.name},`;
-  tempElement.innerHTML = `${temperature}°C`;
+  tempElement.innerHTML = Math.round(response.data.main.temp);
   description.innerHTML = response.data.weather[0].description;
 }
 
