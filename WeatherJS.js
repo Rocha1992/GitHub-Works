@@ -25,12 +25,12 @@ function formDate(date) {
 
   let year = date.getFullYear();
 
-  return `${date} ${hours}:${minutes}`;
+  return `${day} ${month} ${date} ${year} ${hours}:${minutes}`;
 }
 
 function formatTime(timestamp) {
   // get the current time
-  let date = new Date(time
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10)
   hours=`0${hours}`;
@@ -64,7 +64,7 @@ function showForecast(response) {
   <br />
   <img src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"alt="clear"class="float-left" id="icon"></i>
   <div class="weather-forecast-temperature">
-  <p>${Math.round(forecast.main.temp.max)}&#176; | </p>${Math.round(forecast.main.temp.min)}&#176; ;
+  <p>${Math.round(forecast.main.temp.max)}° | </p>${Math.round(forecast.main.temp.min)}° 
 </div>`
   console.log(response.data);
 }
@@ -74,7 +74,7 @@ function searchCity(city) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
   axios.get(url).then(displayWeather);
 
-  apiUrl=`api.openweathermap.org/data/2.5/forecast?q=${city},us&mode=xml&appid=${key}&units=metric`;
+  apiUrl=`api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&units=metric`;
   axios.get(apiUrl).then(showForecast);
 }
 
