@@ -121,12 +121,19 @@ body {
    text-decoration: underline;
  }
 
+ .weather-temperature.active:hover {
+   text-decoration: none;
+ }
+
  .weather-temperature.units {
    position: relative;
    font-size:16px;
    top:-34px;
  }
 
+ .weather-temperature img {
+   margin-right: 5px;
+ }
 
 
 
