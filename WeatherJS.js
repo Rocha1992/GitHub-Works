@@ -21,34 +21,22 @@ function formDate(date) {
     "Dec"
   ]
   let month = months[date.getMonth()];
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
 
   let year = date.getFullYear();
 
   return `${day} ${month} ${date} ${year} ${hours}:${minutes}`;
 }
 
-function formatTime(timestamp) {
-  // get the current time
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10)
-  hours=`0${hours}`;
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes =`0${minutes}`;
-  }
-  let day = days[date.getDay()];
-  dateElement.innerHTML = formatTime(response.data.dt+1000);
-}
 
 function handleSubmit(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
-  let cityInputElement = document.querySelector("#city-input");
-  console.log(cityInputElement);
+  let cityInput= document.querySelector("#city-input");
   cityElement.innerHTML = cityInput.value;
 
-  searchCity(cityInputElement.value);
+  searchCity(cityInput.value);
 }
 
 function showForecast(response) {
