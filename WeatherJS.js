@@ -26,7 +26,7 @@ function formDate(date) {
   let hours = date.getHours();
   let minutes = date.getMinutes();
 
-  return `${date}, ${year}. ${hours}:${minutes}`;
+  return `${hours}:${minutes}`;
 }
 
 function handleSubmit(event) {
