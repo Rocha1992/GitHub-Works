@@ -1,6 +1,7 @@
 let currentTime = new Date();
 let dateElement = document.querySelector("#date");
 dateElement.innerHTML = formDate(currentTime);
+dateElement.innerHTML = formatTime(response.data.dt+1000);
 
 function formDate(date) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
@@ -19,14 +20,21 @@ function formDate(date) {
     "Oct",
     "Nov",
     "Dec"
-  ];
+  ]
   let month = months[date.getMonth()];
 
   let year = date.getFullYear();
   let hours = date.getHours();
   let minutes = date.getMinutes();
 
-  return `${hours}:${minutes}`;
+  return `${date} ${hours}:${minutes}`;
+}
+
+function formatTime(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let day = days[date.getDay()];
 }
 
 function handleSubmit(event) {
