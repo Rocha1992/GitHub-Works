@@ -31,6 +31,7 @@ function formDate(date) {
 }
 
 function formatTime(timestamp) {
+  // get the current time
   let date = new Date(timestamp);
   let hours = date.getHours();
   let minutes = date.getMinutes();

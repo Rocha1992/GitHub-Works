@@ -39,8 +39,9 @@ body {
   ul {
     margin: 0;
     padding: 10;
-    font-weight: 40px;
+    font-weight: 50px;
     max-width: 400px;
+    font-size:16pt;
   }
 
   li {
@@ -51,9 +52,12 @@ body {
     line-height: 10px;
     margin: 0;
     padding: 0 auto;
-    text-transform: capitalize;
   }
   
+  li:first-letter {
+    text-transform: capitalize;
+
+  }
   .col-6 i {
     color: #fee953;
     font-size: 60px;
