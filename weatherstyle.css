@@ -117,10 +117,6 @@ body {
    cursor: default;
  }
 
- .weather-temperature.active {
-   text-decoration: underline;
- }
-
  .weather-temperature.active:hover {
    text-decoration: none;
  }
