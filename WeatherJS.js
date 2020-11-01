@@ -1,7 +1,6 @@
 let currentTime = new Date();
 let dateElement = document.querySelector("#date");
 dateElement.innerHTML = formDate(currentTime);
-dateElement.innerHTML = formatTime(response.data.dt+1000);
 
 function formDate(date) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
@@ -39,7 +38,7 @@ function formatTime(timestamp) {
     minutes =`0${minutes}`;
   }
   let day = days[date.getDay()];
- 
+  dateElement.innerHTML = formatTime(response.data.dt+1000);
 }
 
 function handleSubmit(event) {
