@@ -34,8 +34,14 @@ function formatTime(timestamp) {
   // get the current time
   let date = new Date(timestamp);
   let hours = date.getHours();
+  if (hours < 10)
+  hours=`0${hours}`;
   let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes =`0${minutes}`;
+  }
   let day = days[date.getDay()];
+ 
 }
 
 function handleSubmit(event) {
@@ -83,6 +89,11 @@ function displayWeather(response) {
   let windElement = document.querySelector("#wind");
   let iconElement=document.querySelector("#icon");
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
+  iconElement.setAttribute("src", "http://openweathermap.org/img/wn/09d@2x.png");
+  iconElement.setAttribute("src", "http://openweathermap.org/img/wn/09d@2x.png");
+  iconElement.setAttribute("src", "http://openweathermap.org/img/wn/09d@2x.png");
   humidityElement.innerHTML =response.data.main.humidity;
   windElement.innerHTML= Math.round(response.data.wind.speed);
   cityElement.innerHTML = `${response.data.name}`;
