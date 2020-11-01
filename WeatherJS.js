@@ -65,14 +65,17 @@ form.addEventListener("submit", handleSubmit);
 
 function convertFahrenheit(event) {
   event.preventDefault();
+  let fahrenheitTemperature=(celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 18;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+
+let celsiusTemperature =null;
 
 function convertCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 64;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);  
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -89,6 +92,9 @@ function displayWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement=document.querySelector("#icon");
+
+celsiusTemperature = response.data.main.temp;
+
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
