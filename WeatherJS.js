@@ -68,6 +68,7 @@ function convertFahrenheit(event) {
   let fahrenheitTemperature=(celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
   // remove the active class from celsius link
+  celsiusLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
