@@ -136,7 +136,7 @@ function getCurrentLocation() {
   navigator.geolocation.getCurrentLocation(searchPosition);
 }
 
-let button = document.querySelector("button");
+let button = document.querySelector(".current-location");
 button.addEventListener("submit", getCurrentLocation);
 
 searchCity("Vancouver");
