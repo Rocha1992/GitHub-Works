@@ -103,6 +103,7 @@ function displayWeather(response) {
 }
 
 function searchPosition(position) {
+  let city="Vancouver";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let key = `0c9d950699fec8362223f7a0e10d4ecd`;
