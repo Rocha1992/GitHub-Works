@@ -8,7 +8,7 @@ body {
   
   h2 {
     text-align: left;
-    color: #e50914;
+    color: Black;
     font-size: 18px;
     line-height: 30px;
     padding: 0;
@@ -65,7 +65,7 @@ body {
   
   .date {
     font-size: 30pt;
-    line-height: 30px;
+    line-height: 15px;
     padding: 0;
     margin: 0;
     margin-bottom: 5px;
