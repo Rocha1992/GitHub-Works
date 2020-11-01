@@ -47,7 +47,8 @@ function formatTime(timestamp) {
 function handleSubmit(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
-  let cityInput = document.querySelector("#city-input");
+  let cityInputElement = document.querySelector("#city-input");
+  console.log(cityInputElement);
   cityElement.innerHTML = cityInput.value;
 
   searchCity(cityInput.value);
@@ -117,3 +118,6 @@ let button = document.querySelector("button");
 button.addEventListener("submit", getCurrentLocation);
 
 searchCity("Vancouver");
+
+let form = document.querySelector("search-form");
+form.addEventListener("submit", handleSubmit);
