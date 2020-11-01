@@ -106,7 +106,7 @@ celsiusLink.addEventListener("click", convertCelsius);
 
 function displayWeather(response) {
   let temperature = Math.round(response.data.main.temp);
-  let tempElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#temperature");
   let description = document.querySelector("#temperature-description");
   let cityElement = document.querySelector("#city");
   let humidityElement = document.querySelector("#humidity");
