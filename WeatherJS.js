@@ -51,7 +51,7 @@ function handleSubmit(event) {
   console.log(cityInputElement);
   cityElement.innerHTML = cityInput.value;
 
-  searchCity(cityInput.value);
+  searchCity(cityInputElement.value);
 }
 
 function searchCity(city) {
@@ -119,5 +119,4 @@ button.addEventListener("submit", getCurrentLocation);
 
 searchCity("Vancouver");
 
-let form = document.querySelector("search-form");
-form.addEventListener("submit", handleSubmit);
+
