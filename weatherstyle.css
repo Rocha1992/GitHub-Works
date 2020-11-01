@@ -53,11 +53,8 @@ body {
     margin: 0;
     padding: 0 auto;
   }
-  
-  li:first-letter {
-    text-transform: capitalize;
 
-  }
+  
   .col-6 i {
     color: #fee953;
     font-size: 60px;
