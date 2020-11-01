@@ -24,15 +24,13 @@ function formDate(date) {
   let month = months[date.getMonth()];
 
   let year = date.getFullYear();
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
 
   return `${date} ${hours}:${minutes}`;
 }
 
 function formatTime(timestamp) {
   // get the current time
-  let date = new Date(timestamp);
+  let date = new Date(time
   let hours = date.getHours();
   if (hours < 10)
   hours=`0${hours}`;
@@ -55,6 +53,19 @@ function handleSubmit(event) {
 }
 
 function showForecast(response) {
+  let forecastElement=document.querySelector("forecast");
+  let forecast =response.data.list[0];
+
+  forecastElement.innerHTML=`
+  <div class="col-2">
+  <strong>
+    Today
+  </strong>
+  <br />
+  <img src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"alt="clear"class="float-left" id="icon"></i>
+  <div class="weather-forecast-temperature">
+  <p>${Math.round(forecast.main.temp.max)}&#176; | </p>${Math.round(forecast.main.temp.min)}&#176; ;
+</div>`
   console.log(response.data);
 }
 
@@ -65,7 +76,6 @@ function searchCity(city) {
 
   apiUrl=`api.openweathermap.org/data/2.5/forecast?q=${city},us&mode=xml&appid=${key}&units=metric`;
   axios.get(apiUrl).then(showForecast);
-
 }
 
 let form = document.querySelector("form");
@@ -105,12 +115,7 @@ function displayWeather(response) {
 
 celsiusTemperature = response.data.main.temp;
 
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
-  iconElement.setAttribute("src", "http://openweathermap.org/img/wn/09d@2x.png");
-  iconElement.setAttribute("src", "http://openweathermap.org/img/wn/09d@2x.png");
-  iconElement.setAttribute("src", "http://openweathermap.org/img/wn/09d@2x.png");
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`);
   humidityElement.innerHTML =response.data.main.humidity;
   windElement.innerHTML= Math.round(response.data.wind.speed);
   cityElement.innerHTML = `${response.data.name}`;
