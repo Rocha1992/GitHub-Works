@@ -26,9 +26,8 @@ function formDate(date) {
 
   let year = date.getFullYear();
 
-  return `${day} ${month} ${date} ${year} ${hours}:${minutes}`;
+  return `${day} ${month} ${date} ${year}`;
 }
-
 
 function handleSubmit(event) {
   event.preventDefault();
