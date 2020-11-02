@@ -106,6 +106,7 @@ celsiusTemperature = response.data.main.temp;
   windElement.innerHTML= Math.round(response.data.wind.speed);
   cityElement.innerHTML = `${response.data.name}`;
   tempElement.innerHTML = Math.round(response.data.main.temp);
+  tempElement.innerHTML = `${temperature}°C`;
   description.innerHTML = response.data.weather[0].description;
 }
 
