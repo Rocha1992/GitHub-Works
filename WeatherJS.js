@@ -28,6 +28,22 @@ function formDate(date) {
   return `${day} ${month} ${date} ${year}, ${hours}:${minutes}`;
 }
 
+function formHours (timestamp) {
+  console.log(timestamp);
+  let now= new Date(timestamp);
+  let currentHours = now.getHours();
+  if (currenHours < 10) {
+    currentHours = `0${currentHours}`;
+  }
+  let currentMinutes = now.getMinutes();
+  if (currentMinutes < 10) {
+    currentMinutes=`0${currentMinutes}`;
+
+    return `${currentHours}:${currentMinutes}`;
+  }
+
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
@@ -39,9 +55,9 @@ function handleSubmit(event) {
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML="";
-  let forecast=null;
-  ​
+  forecastElement.innherHTML= "";
+  let forecast = null;
+
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
@@ -58,9 +74,8 @@ function showForecast(response) {
       forecast.main.temp_min
     )}°
   </div>`;
-  }
+    }
 }
-
 
 function searchCity(city) {
   let key = `0c9d950699fec8362223f7a0e10d4ecd`;
