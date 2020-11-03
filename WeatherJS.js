@@ -26,19 +26,6 @@ function formDate(date) {
   return `${day} ${month} ${date} ${year}`;
 }
 
-function formHours (timestamp) {
-  let now = new Date(timestamp);
-  let hours= date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-return `${hours}:${minutes};
-}
-
 function handleSubmit(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
@@ -58,7 +45,7 @@ function showForecast(response) {
     forecastElement.innerHTML += `
     <div class="col-2">
     <strong>
-      
+      Today
     </strong>
     <br />
     <img src ="http://openweathermap.org/img/wn/${
@@ -115,6 +102,7 @@ function displayWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
+  dateElement.innerHTML=
 
   celsiusTemperature = response.data.main.temp;
 
