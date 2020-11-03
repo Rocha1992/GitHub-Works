@@ -40,9 +40,28 @@ function handleSubmit(event) {
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
+  let forecast = null;
+  forecast.innherHTML=null;
 
-  forecastElement.innerHTML = `
+  for (let index = 0; index < 6; index++) {
+    let forecast=response.data.list[0];
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+    <strong>
+      Today
+    </strong>
+    <br />
+    <img src ="http://openweathermap.org/img/wn/${
+      forecast.weather[0].icon
+    }@2x.png"alt="clear"class="float-left" id="icon"></i>
+    <div class="weather-forecast-temperature">
+    <p>${Math.round(forecast.main.temp_max)}° | </p>${Math.round(
+      forecast.main.temp_min
+    )}°
+  </div>`;
+
+  forecastElement.innerHTML += `
   <div class="col-2">
   <strong>
     Today
@@ -59,7 +78,7 @@ function showForecast(response) {
   console.log(response.data[0]);
 
   forecast = response.data.list[1];
-  forecastElement.innerHTML = `
+  forecastElement.innerHTML += `
   <div class="col-2">
   <strong>
     Monday
@@ -75,7 +94,7 @@ function showForecast(response) {
 </div>`;
 
 forecast = response.data.list[2];
-  forecastElement.innerHTML = `
+  forecastElement.innerHTML += `
   <div class="col-2">
   <strong>
     Tuesday
@@ -91,7 +110,7 @@ forecast = response.data.list[2];
 </div>`;
 
 forecast = response.data.list[3];
-  forecastElement.innerHTML = `
+  forecastElement.innerHTML += `
   <div class="col-2">
   <strong>
     Wednesday
@@ -107,7 +126,7 @@ forecast = response.data.list[3];
 </div>`;
 
 forecast = response.data.list[4];
-  forecastElement.innerHTML = `
+  forecastElement.innerHTML += `
   <div class="col-2">
   <strong>
     Thursday
@@ -123,7 +142,7 @@ forecast = response.data.list[4];
 </div>`;
 
 forecast = response.data.list[5];
-  forecastElement.innerHTML = `
+  forecastElement.innerHTML += `
   <div class="col-2">
   <strong>
     Friday
@@ -137,6 +156,7 @@ forecast = response.data.list[5];
     forecast.main.temp_min
   )}°
 </div>`;
+ }
 }
 
 function searchCity(city) {
