@@ -42,7 +42,7 @@ function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecast = response.data.list[0];
 
-  forecastElement.innerHTML += `
+  forecastElement.innerHTML = `
   <div class="col-2">
   <strong>
     Today
@@ -56,9 +56,10 @@ function showForecast(response) {
     forecast.main.temp_min
   )}°
 </div>`;
+  console.log(response.data[0]);
 
   forecast = response.data.list[1];
-  forecastElement.innerHTML += `
+  forecastElement.innerHTML = `
   <div class="col-2">
   <strong>
     Monday
@@ -74,7 +75,7 @@ function showForecast(response) {
 </div>`;
 
 forecast = response.data.list[2];
-  forecastElement.innerHTML += `
+  forecastElement.innerHTML = `
   <div class="col-2">
   <strong>
     Tuesday
@@ -90,7 +91,7 @@ forecast = response.data.list[2];
 </div>`;
 
 forecast = response.data.list[3];
-  forecastElement.innerHTML += `
+  forecastElement.innerHTML = `
   <div class="col-2">
   <strong>
     Wednesday
@@ -106,7 +107,7 @@ forecast = response.data.list[3];
 </div>`;
 
 forecast = response.data.list[4];
-  forecastElement.innerHTML += `
+  forecastElement.innerHTML = `
   <div class="col-2">
   <strong>
     Thursday
@@ -122,7 +123,7 @@ forecast = response.data.list[4];
 </div>`;
 
 forecast = response.data.list[5];
-  forecastElement.innerHTML += `
+  forecastElement.innerHTML = `
   <div class="col-2">
   <strong>
     Friday
