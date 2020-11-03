@@ -56,7 +56,6 @@ function showForecast(response) {
     forecast.main.temp_min
   )}°
 </div>`;
-  console.log(response.data);
 
   forecast = response.data.list[1];
   forecastElement.innerHTML += `
