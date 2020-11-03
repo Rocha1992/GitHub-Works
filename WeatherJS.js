@@ -63,7 +63,7 @@ function showForecast(response) {
     forecastElement.innerHTML += `
     <div class="col-2">
     <strong>
-      Today
+    ${formHours(forecast.dt * 1000)}
     </strong>
     <br />
     <img src ="http://openweathermap.org/img/wn/${
@@ -73,7 +73,9 @@ function showForecast(response) {
     <p>${Math.round(forecast.main.temp_max)}° | </p>${Math.round(
       forecast.main.temp_min
     )}°
-  </div>`;
+  </div>
+</div>
+`;
     }
 }
 
@@ -132,7 +134,7 @@ function displayWeather(response) {
   cityElement.innerHTML = `${response.data.name}`;
   temperatureElement.innerHTML = `${temperature}°C`;
   description.innerHTML = response.data.weather[0].description;
-  dateElement.innerHTML=currentTime(reponse.data.dt*1000);
+  dateElement.innerHTML=formDate(reponse.data.dt*1000);
 }
 
 function searchPosition(position) {
