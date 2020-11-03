@@ -40,11 +40,10 @@ function handleSubmit(event) {
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
+  forecastElement.innherHTML= null;
   let forecast = null;
-  forecast.innherHTML=null;
 
   for (let index = 0; index < 6; index++) {
-    let forecast=response.data.list[0];
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
     <div class="col-2">
@@ -60,103 +59,7 @@ function showForecast(response) {
       forecast.main.temp_min
     )}°
   </div>`;
-
-  forecastElement.innerHTML += `
-  <div class="col-2">
-  <strong>
-    Today
-  </strong>
-  <br />
-  <img src ="http://openweathermap.org/img/wn/${
-    forecast.weather[0].icon
-  }@2x.png"alt="clear"class="float-left" id="icon"></i>
-  <div class="weather-forecast-temperature">
-  <p>${Math.round(forecast.main.temp_max)}° | </p>${Math.round(
-    forecast.main.temp_min
-  )}°
-</div>`;
-  console.log(response.data[0]);
-
-  forecast = response.data.list[1];
-  forecastElement.innerHTML += `
-  <div class="col-2">
-  <strong>
-    Monday
-  </strong>
-  <br />
-  <img src ="http://openweathermap.org/img/wn/${
-    forecast.weather[0].icon
-  }@2x.png"alt="clear"class="float-left" id="icon"></i>
-  <div class="weather-forecast-temperature">
-  <p>${Math.round(forecast.main.temp_max)}° | </p>${Math.round(
-    forecast.main.temp_min
-  )}°
-</div>`;
-
-forecast = response.data.list[2];
-  forecastElement.innerHTML += `
-  <div class="col-2">
-  <strong>
-    Tuesday
-  </strong>
-  <br />
-  <img src ="http://openweathermap.org/img/wn/${
-    forecast.weather[0].icon
-  }@2x.png"alt="clear"class="float-left" id="icon"></i>
-  <div class="weather-forecast-temperature">
-  <p>${Math.round(forecast.main.temp_max)}° | </p>${Math.round(
-    forecast.main.temp_min
-  )}°
-</div>`;
-
-forecast = response.data.list[3];
-  forecastElement.innerHTML += `
-  <div class="col-2">
-  <strong>
-    Wednesday
-  </strong>
-  <br />
-  <img src ="http://openweathermap.org/img/wn/${
-    forecast.weather[0].icon
-  }@2x.png"alt="clear"class="float-left" id="icon"></i>
-  <div class="weather-forecast-temperature">
-  <p>${Math.round(forecast.main.temp_max)}° | </p>${Math.round(
-    forecast.main.temp_min
-  )}°
-</div>`;
-
-forecast = response.data.list[4];
-  forecastElement.innerHTML += `
-  <div class="col-2">
-  <strong>
-    Thursday
-  </strong>
-  <br />
-  <img src ="http://openweathermap.org/img/wn/${
-    forecast.weather[0].icon
-  }@2x.png"alt="clear"class="float-left" id="icon"></i>
-  <div class="weather-forecast-temperature">
-  <p>${Math.round(forecast.main.temp_max)}° | </p>${Math.round(
-    forecast.main.temp_min
-  )}°
-</div>`;
-
-forecast = response.data.list[5];
-  forecastElement.innerHTML += `
-  <div class="col-2">
-  <strong>
-    Friday
-  </strong>
-  <br />
-  <img src ="http://openweathermap.org/img/wn/${
-    forecast.weather[0].icon
-  }@2x.png"alt="clear"class="float-left" id="icon"></i>
-  <div class="weather-forecast-temperature">
-  <p>${Math.round(forecast.main.temp_max)}° | </p>${Math.round(
-    forecast.main.temp_min
-  )}°
-</div>`;
- }
+    }
 }
 
 function searchCity(city) {
