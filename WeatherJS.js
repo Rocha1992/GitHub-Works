@@ -21,12 +21,22 @@ function formDate(date) {
     "Dec"
   ];
   let month = months[date.getMonth()];
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-
   let year = date.getFullYear();
 
   return `${day} ${month} ${date} ${year}`;
+}
+
+function formHours (timestamp) {
+  let now = new Date(timestamp);
+  let hours= date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+return `${hours}:${minutes};
 }
 
 function handleSubmit(event) {
@@ -40,7 +50,7 @@ function handleSubmit(event) {
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innherHTML= null;
+  forecastElement.innherHTML= "";
   let forecast = null;
 
   for (let index = 0; index < 6; index++) {
@@ -48,7 +58,7 @@ function showForecast(response) {
     forecastElement.innerHTML += `
     <div class="col-2">
     <strong>
-      Today
+      
     </strong>
     <br />
     <img src ="http://openweathermap.org/img/wn/${
