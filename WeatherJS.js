@@ -22,8 +22,9 @@ function formDate(date) {
   ];
   let month = months[date.getMonth()];
   let year = date.getFullYear();
-  let hours = date.gethours();
+  let hours = date.getHours();
   let minutes= date.getMinutes();
+
   return `${day} ${month} ${date} ${year}, ${hours}:${minutes}`;
 }
 
@@ -38,9 +39,9 @@ function handleSubmit(event) {
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innherHTML= "";
-  let forecast = null;
-
+  forecastElement.innerHTML="";
+  let forecast=null;
+  ​
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
@@ -57,8 +58,9 @@ function showForecast(response) {
       forecast.main.temp_min
     )}°
   </div>`;
-    }
+  }
 }
+
 
 function searchCity(city) {
   let key = `0c9d950699fec8362223f7a0e10d4ecd`;
@@ -103,7 +105,6 @@ function displayWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
-  dateElement.innerHTML=
 
   celsiusTemperature = response.data.main.temp;
 
@@ -116,6 +117,7 @@ function displayWeather(response) {
   cityElement.innerHTML = `${response.data.name}`;
   temperatureElement.innerHTML = `${temperature}°C`;
   description.innerHTML = response.data.weather[0].description;
+  dateElement.innerHTML=currentTime(reponse.data.dt*1000);
 }
 
 function searchPosition(position) {
