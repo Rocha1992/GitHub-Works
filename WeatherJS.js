@@ -55,7 +55,7 @@ function handleSubmit(event) {
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innherHTML= "";
+  forecastElement.innherHTML= null;
   let forecast = null;
 
   for (let index = 0; index < 6; index++) {
