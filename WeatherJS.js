@@ -55,7 +55,7 @@ function handleSubmit(event) {
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innherHTML= null;
+  forecastElement.innherHTML= "";
   let forecast = null;
 
   for (let index = 0; index < 6; index++) {
@@ -63,7 +63,7 @@ function showForecast(response) {
     forecastElement.innerHTML += `
     <div class="col-2">
     <strong>
-    ${formHours(forecast.dt * 1000)}
+    Today
     </strong>
     <br />
     <img src ="http://openweathermap.org/img/wn/${
