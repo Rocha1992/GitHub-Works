@@ -28,22 +28,6 @@ function formDate(date) {
   return `${day} ${month} ${date} ${year}, ${hours}:${minutes}`;
 }
 
-function formHours (timestamp) {
-  console.log(timestamp);
-  let now= new Date(timestamp);
-  let currentHours = now.getHours();
-  if (currenHours < 10) {
-    currentHours = `0${currentHours}`;
-  }
-  let currentMinutes = now.getMinutes();
-  if (currentMinutes < 10) {
-    currentMinutes=`0${currentMinutes}`;
-
-    return `${currentHours}:${currentMinutes}`;
-  }
-
-}
-
 function handleSubmit(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
@@ -55,7 +39,7 @@ function handleSubmit(event) {
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innherHTML= "";
+  forecastElement.innherHTML= null;
   let forecast = null;
 
   for (let index = 0; index < 6; index++) {
@@ -129,12 +113,12 @@ function displayWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   cityElement.innerHTML = `${response.data.name}`;
   temperatureElement.innerHTML = `${temperature}°C`;
   description.innerHTML = response.data.weather[0].description;
-  dateElement.innerHTML=formDate(reponse.data.dt*1000);
 }
 
 function searchPosition(position) {
