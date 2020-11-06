@@ -31,8 +31,8 @@ function formDate(date) {
 function handleSubmit(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
-  let cityInputElement = document.querySelector("#city-input");
-  cityElement.innerHTML = cityInputElement.value;
+  let cityInput = document.querySelector("#city-input");
+  cityElement.innerHTML = cityInput.value;
 
   searchCity(cityInput.value);
 }
